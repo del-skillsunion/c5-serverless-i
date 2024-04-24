@@ -1,0 +1,24 @@
+service: c5-serverless-i
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+functions:
+  delfrinandoapi:
+    handler: index.pranata
+    events:
+      - httpApi:
+          path: /
+          method: get
+
+  pranatapost:
+    handler: index.pranatapost
+    events:
+      - httpApi:
+          path: /pranata
+          method: post
+
+plugins:
+  - serverless-offline
