@@ -1,5 +1,5 @@
 module.exports.firsthandler = async (event) => {
-  console.log(event.body)
+  console.log(event)
   return {
     statusCode: 200,
     body: JSON.stringify(
@@ -13,7 +13,7 @@ module.exports.firsthandler = async (event) => {
 };
 
 module.exports.secondhandler = async (event) => {
-  console.log(event.body)
+  console.log(event)
   return {
     statusCode: 200,
     body: JSON.stringify(
