@@ -14,6 +14,8 @@ functions:
       - httpApi:
           path: /delfrinando
           method: get
+      - sqs:
+          arn: arn:aws:sqs:us-east-1:255945442255:delfrinando-pranata
 
   secondfunction:
     handler: index.secondhandler
