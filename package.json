@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/del-skillsunion/c5-serverless-i#readme",
   "devDependencies": {
+    "jest": "^29.7.0",
     "serverless-offline": "^13.3.4"
   }
 }

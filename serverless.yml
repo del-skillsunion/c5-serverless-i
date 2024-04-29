@@ -6,15 +6,15 @@ provider:
   runtime: nodejs18.x
 
 functions:
-  delfrinandoapi:
-    handler: index.pranata
+  firstfunction:
+    handler: index.firsthandler
     events:
       - httpApi:
-          path: /
+          path: /delfrinando
           method: get
 
-  pranatapost:
-    handler: index.pranatapost
+  secondfunction:
+    handler: index.secondhandler
     events:
       - httpApi:
           path: /pranata

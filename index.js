@@ -1,9 +1,10 @@
-module.exports.pranata = async (event) => {
+module.exports.firsthandler = async (event) => {
+  console.log(event.body)
   return {
     statusCode: 200,
     body: JSON.stringify(
       {
-        message: "Your function executed successfully!",
+        message: "This is get function!",
       },
       null,
       2
@@ -11,7 +12,8 @@ module.exports.pranata = async (event) => {
   };
 };
 
-module.exports.pranatapost = async (event) => {
+module.exports.secondhandler = async (event) => {
+  console.log(event.body)
   return {
     statusCode: 200,
     body: JSON.stringify(
