@@ -23,6 +23,20 @@ functions:
       - httpApi:
           path: /pranata
           method: post
+      - sqs:
+          arn:
+            Fn::GetAtt:
+              - PranataQueue
+              - Arn
+
+	
+resources:
+  Resources:
+    PranataQueue:
+      Type: "AWS::SQS::Queue"
+      Properties:
+        QueueName: "pranata-queue"
+
 
 plugins:
   - serverless-offline
