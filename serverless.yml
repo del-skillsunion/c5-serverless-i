@@ -1,4 +1,4 @@
-service: c5-serverless-i
+service: c5-delfrinando-i
 frameworkVersion: '3'
 
 provider:
