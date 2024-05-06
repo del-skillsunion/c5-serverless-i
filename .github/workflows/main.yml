@@ -38,4 +38,4 @@ jobs:
       - name: Reveal Secret
         env: 
           MY_SECRET: ${{ secrets.TOP_SECRET}}
-        run: echo "My secret is ${MY_SECRET}"
+        run: echo "My secret is ${{ secrets.TOP_SECRET}}"
