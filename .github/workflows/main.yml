@@ -1,6 +1,10 @@
 name: GitHub Actions Demo Created from Local Machine
 run-name: ${{ github.actor }} is testing out GitHub Actions
-on: [push]
+on:
+  push:
+    branches:
+      - main
+      - 'releases/**'
 jobs:
   job-1:
     runs-on: ubuntu-latest
