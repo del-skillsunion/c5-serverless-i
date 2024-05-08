@@ -12,6 +12,7 @@ jobs:
 
   unit-testing:
     runs-on: ubuntu-latest
+    needs: install-dependencies
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
