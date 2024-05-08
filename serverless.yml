@@ -28,7 +28,6 @@ functions:
             Fn::GetAtt:
               - PranataQueue
               - Arn
-
 	
 resources:
   Resources:
@@ -36,7 +35,6 @@ resources:
       Type: "AWS::SQS::Queue"
       Properties:
         QueueName: "pranata-queue"
-
 
 plugins:
   - serverless-offline
