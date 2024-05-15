@@ -1,6 +1,4 @@
 service: c5-delfrinando-i
-frameworkVersion: '3'
-
 provider:
   name: aws
   runtime: nodejs18.x
@@ -12,27 +10,28 @@ functions:
     handler: index.firsthandler
     events:
       - httpApi:
-          path: /delfrinando
+          path: /mohamed
           method: get
+      #- sqs:
+      #    arn: arn:aws:sqs:us-east-1:255945442255:mmf2311-sqs
 
   secondfunction:
     handler: index.secondhandler
     events:
       - httpApi:
-          path: /pranata
+          path: /malik
           method: post
       - sqs:
           arn:
             Fn::GetAtt:
-              - PranataQueue
+              - MalikQueue
               - Arn
-	
 resources:
   Resources:
-    PranataQueue:
+    MalikQueue:
       Type: "AWS::SQS::Queue"
       Properties:
-        QueueName: "pranata-queue"
+        QueueName: "mmf2311-sqs"
 
 plugins:
   - serverless-offline
