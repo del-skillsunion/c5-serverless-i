@@ -49,6 +49,13 @@ jobs:
       - name: Use the secret value
         run: |
           echo "The secret value is: ${{ env.secret_value }}"
+      - name: Step name
+        uses: aws-actions/aws-secretsmanager-get-secrets@v2
+        with:
+          secret-ids: |
+            MyDatabaseSecret
+            ENV_VAR_NAME, secretId2
+          parse-json-secrets: (Optional) true|false
 
   # deploy:
   #   name: deploy
