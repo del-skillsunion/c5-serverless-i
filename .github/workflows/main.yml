@@ -27,17 +27,13 @@ jobs:
      
   deploy:
     name: deploy
-    runs-on: ubuntu-latest
+    runs-on: code-unit-testing
     needs: install-dependencies
     strategy:
       matrix:
         node-version: [18.x]
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
+    - uses: actions/checkout@v4
     - run: npm ci
     - name: serverless deploy
       uses: serverless/github-action@v3.2
