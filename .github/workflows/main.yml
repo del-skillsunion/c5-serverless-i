@@ -41,15 +41,14 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      - name: Read secrets from AWS Secrets Manager into environment variables
-        uses: aws-actions/aws-secretsmanager-get-secrets@v2s
-        with:
-          secrets: |
-            my_secret_1
-            app1/dev/*
-          parse-json: true
-      - name: Check if env variable is set after fetching secrets
-        run: if [ -z ${MY_SECRET_1+x} ]; then echo "MY_SECRET_1 is unset";
+      - name: Get secret from AWS Secrets Manager
+        id: get-secret
+        run: |
+          secret_value=$(aws secretsmanager get-secret-value --secret-id MyDatabaseSecret --query SecretString --output text)
+          echo "secret_value=${secret_value}" >> $GITHUB_ENV
+      - name: Use the secret value
+        run: |
+          echo "The secret value is: ${{ env.secret_value }}"
 
   # deploy:
   #   name: deploy
