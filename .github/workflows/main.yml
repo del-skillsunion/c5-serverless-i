@@ -55,7 +55,7 @@ jobs:
           secret-ids: |
             MyDatabaseSecret
             ENV_VAR_NAME, secretId2
-          parse-json-secrets: (Optional) true|false
+          parse-json-secrets: true
 
   # deploy:
   #   name: deploy
