@@ -15,9 +15,18 @@ jobs:
       - name: Run installation of dependencies commands
         run: npm install
 
-  code-unit-testing:
+  npm-audit:
     runs-on: ubuntu-latest
     needs: install-dependencies
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Run Scanning of Dependencies Commands
+        run: npm audit
+        
+  code-unit-testing:
+    runs-on: ubuntu-latest
+    needs: npm-audit
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
