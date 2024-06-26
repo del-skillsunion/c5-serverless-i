@@ -21,6 +21,6 @@
     "serverless-offline": "^13.6.0"
   },
   "dependencies": {
-    "serverless": "^4.0.1"
+    "serverless": "^4.0.35"
   }
 }
